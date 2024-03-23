@@ -23,14 +23,59 @@ body {
   padding: 0;
 }
 
+.parallax{
+  min-height: 75vh;
+  display: grid;
+  position: relative;
+  z-index: 0;
+  grid-template-areas: "stack";
+}
+
+.parallax   *{
+  grid-area: stack;
+}
+
+.parallax  img{
+  width: 100%;
+}
+
+.parallax_bg{
+  z-index: 1;
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.parallax_bg.ai-face-color{
+  position: absolute;
+  z-index: 5;
+  width: 88vmin;
+  left: -44vmin;
+}
+
+.parallax_bg.ai-face-white{
+  position: absolute;
+  z-index: 6;
+  top: 0;
+
+  transform: rotateY(180deg);
+  transform: scale(0.85435vmin) translate(83vmin, -58vmin) rotateY(180deg);
+}
+
 header {
   width: 100vw;
-  height: 95vh;
-  overflow: hidden;
+  /* height: 95vh; */
 }
 header > img {
   object-fit: cover;
   width: -webkit-fill-available;
+}
+
+.header-text {
+  position: absolute;
+  top: 0;
+  margin-left: 15vmin;
+  margin-top: 20vmin;
 }
 
 section {
